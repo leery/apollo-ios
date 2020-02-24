@@ -4,6 +4,8 @@ public struct GraphQLResult<Data> {
   public let data: Data?
   /// A list of errors, or `nil` if the operation completed without encountering any errors.
   public let errors: [GraphQLError]?
+  /// General information of toast
+  public let extensions: GraphQLExtensions?
 
   /// Represents source of data
   public enum Source {
@@ -16,12 +18,14 @@ public struct GraphQLResult<Data> {
   let dependentKeys: Set<CacheKey>?
 
   public init(data: Data?,
+              extensions: GraphQLExtensions?,
               errors: [GraphQLError]?,
               source: Source,
               dependentKeys: Set<CacheKey>?) {
-    self.data = data
-    self.errors = errors
-    self.source = source
-    self.dependentKeys = dependentKeys
+      self.data = data
+      self.extensions = extensions
+      self.errors = errors
+      self.source = source
+      self.dependentKeys = dependentKeys
   }
 }

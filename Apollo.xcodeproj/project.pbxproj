@@ -10,6 +10,7 @@
 		54DDB0921EA045870009DD99 /* InMemoryNormalizedCache.swift in Sources */ = {isa = PBXBuildFile; fileRef = 54DDB0911EA045870009DD99 /* InMemoryNormalizedCache.swift */; };
 		5AC6CA4322AAF7B200B7C94D /* GraphQLHTTPMethod.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5AC6CA4222AAF7B200B7C94D /* GraphQLHTTPMethod.swift */; };
 		5BB2C0232380836100774170 /* VersionNumberTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5BB2C0222380836100774170 /* VersionNumberTests.swift */; };
+		92D44DAA2403798800A658F8 /* GraphQLExtensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 92D44DA92403798800A658F8 /* GraphQLExtensions.swift */; };
 		9B1A38532332AF6F00325FB4 /* String+SHA.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9B1A38522332AF6F00325FB4 /* String+SHA.swift */; };
 		9B1CCDD92360F02C007C9032 /* Bundle+Helpers.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9B1CCDD82360F02C007C9032 /* Bundle+Helpers.swift */; };
 		9B518C87235F819E004C426D /* CLIDownloader.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9B518C85235F8125004C426D /* CLIDownloader.swift */; };
@@ -325,6 +326,7 @@
 		90690D2322433C5900FC2E54 /* Apollo-Target-CacheDependentTests.xcconfig */ = {isa = PBXFileReference; lastKnownFileType = text.xcconfig; path = "Apollo-Target-CacheDependentTests.xcconfig"; sourceTree = "<group>"; };
 		90690D2422433C8000FC2E54 /* Apollo-Target-PerformanceTests.xcconfig */ = {isa = PBXFileReference; lastKnownFileType = text.xcconfig; path = "Apollo-Target-PerformanceTests.xcconfig"; sourceTree = "<group>"; };
 		90690D2522433CAF00FC2E54 /* Apollo-Target-TestSupport.xcconfig */ = {isa = PBXFileReference; lastKnownFileType = text.xcconfig; path = "Apollo-Target-TestSupport.xcconfig"; sourceTree = "<group>"; };
+		92D44DA92403798800A658F8 /* GraphQLExtensions.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = GraphQLExtensions.swift; sourceTree = "<group>"; };
 		9B1A38522332AF6F00325FB4 /* String+SHA.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "String+SHA.swift"; sourceTree = "<group>"; };
 		9B1CCDD82360F02C007C9032 /* Bundle+Helpers.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Bundle+Helpers.swift"; sourceTree = "<group>"; };
 		9B4AA8AD239EFDC9003E1300 /* Apollo-Target-CodegenTests.xcconfig */ = {isa = PBXFileReference; lastKnownFileType = text.xcconfig; path = "Apollo-Target-CodegenTests.xcconfig"; sourceTree = "<group>"; };
@@ -893,6 +895,7 @@
 				9F8F334B229044A200C0E83B /* Decoding.swift */,
 				9FC2333C1E66BBF7001E4541 /* GraphQLDependencyTracker.swift */,
 				9FF90A5C1DDDEB100034C3B6 /* GraphQLExecutor.swift */,
+				92D44DA92403798800A658F8 /* GraphQLExtensions.swift */,
 				9FC9A9C11E2D3CAF0023C4D5 /* GraphQLInputValue.swift */,
 				9F86B68F1E65533D00B885FF /* GraphQLResponseGenerator.swift */,
 				9FA6F3671E65DF4700BF8D73 /* GraphQLResultAccumulator.swift */,
@@ -1765,6 +1768,7 @@
 				9FCE2CEE1E6BE2D900E34457 /* NormalizedCache.swift in Sources */,
 				9F8F334C229044A200C0E83B /* Decoding.swift in Sources */,
 				9B6CB23E238077B70007259D /* Atomic.swift in Sources */,
+				92D44DAA2403798800A658F8 /* GraphQLExtensions.swift in Sources */,
 				9FADC84A1E6B0B2300C677E6 /* Locking.swift in Sources */,
 				9F295E381E277B2A00A24949 /* GraphQLResultNormalizer.swift in Sources */,
 				9F86B68B1E6438D700B885FF /* GraphQLSelectionSetMapper.swift in Sources */,
