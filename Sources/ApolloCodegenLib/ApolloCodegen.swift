@@ -1,5 +1,8 @@
 import Foundation
 
+// Only available on macOS
+#if os(macOS)
+
 /// A class to facilitate running code generation
 public class ApolloCodegen {
   
@@ -41,3 +44,5 @@ public class ApolloCodegen {
     return try cli.runApollo(with: options.arguments, from: folder)
   }
 }
+
+#endif

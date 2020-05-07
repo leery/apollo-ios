@@ -1,5 +1,8 @@
 import Foundation
 
+// Only available on macOS
+#if os(macOS)
+
 /// A wrapper to facilitate downloading a schema with the Apollo node CLI
 public struct ApolloSchemaDownloader {
   
@@ -18,3 +21,5 @@ public struct ApolloSchemaDownloader {
     return try cli.runApollo(with: options.arguments)
   }
 }
+
+#endif

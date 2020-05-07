@@ -1,5 +1,8 @@
 import Foundation
 
+// Only available on macOS
+#if os(macOS)
+
 /// Bash command runner
 public struct Basher {
   
@@ -64,3 +67,5 @@ public struct Basher {
     return output
   }
 }
+
+#endif

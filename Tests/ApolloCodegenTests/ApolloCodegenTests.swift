@@ -41,17 +41,19 @@ class ApolloCodegenTests: XCTestCase {
     case .multipleFiles:
       XCTFail("Nope, this should be a single file!")
     }
+    XCTAssertFalse(options.omitDeprecatedEnumCases)
     XCTAssertFalse(options.passthroughCustomScalars)
     XCTAssertEqual(options.urlToSchemaFile, schema)
+    XCTAssertEqual(options.modifier, .public)
     
     XCTAssertEqual(options.arguments, [
       "codegen:generate",
       "--target=swift",
       "--addTypename",
-      "--includes=./**/*.graphql",
-      "--localSchemaFile=\(schema.path)",
+      "--includes='./**/*.graphql'",
+      "--localSchemaFile='\(schema.path)'",
       "--mergeInFieldsFromFragmentSpreads",
-      output.path,
+      "'\(output.path)'",
     ])
   }
   
@@ -63,9 +65,12 @@ class ApolloCodegenTests: XCTestCase {
     let operationIDsURL = sourceRoot.appendingPathComponent("operationIDs.json")
     let namespace = "ANameSpace"
     
-    let options = ApolloCodegenOptions(includes: "*.graphql",
+    let options = ApolloCodegenOptions(codegenEngine: .swiftExperimental,
+                                       includes: "*.graphql",
                                        mergeInFieldsFromFragmentSpreads: false,
+                                       modifier: .internal,
                                        namespace: namespace,
+                                       omitDeprecatedEnumCases: true,
                                        only: only,
                                        operationIDsURL: operationIDsURL,
                                        outputFormat: .multipleFiles(inFolderAtURL: output),
@@ -84,19 +89,22 @@ class ApolloCodegenTests: XCTestCase {
     }
     XCTAssertTrue(options.passthroughCustomScalars)
     XCTAssertEqual(options.urlToSchemaFile, schema)
+    XCTAssertTrue(options.omitDeprecatedEnumCases)
+    XCTAssertEqual(options.modifier, .internal)
     
     
     XCTAssertEqual(options.arguments, [
       "codegen:generate",
-      "--target=swift",
+      "--target=json",
       "--addTypename",
-      "--includes=*.graphql",
-      "--localSchemaFile=\(schema.path)",
+      "--includes='*.graphql'",
+      "--localSchemaFile='\(schema.path)'",
       "--namespace=\(namespace)",
-      "--only=\(only.path)",
-      "--operationIdsPath=\(operationIDsURL.path)",
+      "--only='\(only.path)'",
+      "--operationIdsPath='\(operationIDsURL.path)'",
+      "--omitDeprecatedEnumCases",
       "--passthroughCustomScalars",
-      output.path,
+      "'\(output.path)'",
     ])
   }
   

@@ -2,7 +2,7 @@
 
 This document checklist of things that need to happen before, during, and after a release of this library. This document is included in the repo for a couple reasons: 
  
-1. It makes it easier for people who are not the primary maintainer to perform a relase if needed
+1. It makes it easier for people who are not the primary maintainer to perform a release if needed
 2. It helps the primary maintainer, who has the memory of a goldfish, remember to actually do all this stuff before releasing
 
 ## Pre-flight checklist
@@ -11,7 +11,7 @@ Things to do before cutting a release:
 
 -[ ] Update the `CHANGELOG` with all relevant changes since the prior version
 -[ ] Update the version in [`Configuration/Shared/Project-Version.xcconfig`](Configuration/Shared/Project-Version.xcconfig)
--[ ] Run `sourcedocs` as noted in [`api-reference.md`](docs/source/api-reference.md) to re-generate documentation from source for all included libraries
+-[ ] Run the Documentation Generator as noted in [`api-reference.md`](docs/source/api-reference.md) to re-generate documentation from source for all included libraries
 -[ ] Validate that `master` builds with a test Swift Package Manager project
 -[ ] Validate that `master` builds with a test CocoaPods project
 -[ ] Validate that `master` builds with a test Carthage project 

@@ -1,5 +1,8 @@
 import Foundation
 
+// Only available on macOS
+#if os(macOS)
+
 /// Helper for downloading the CLI Zip file so we don't have to include it in the repo.
 struct CLIDownloader {
   
@@ -27,7 +30,7 @@ struct CLIDownloader {
   }
   
   /// The URL string for getting the current version of the CLI
-  static let downloadURLString = "https://41516-65563448-gh.circle-artifacts.com/0/oclif-pack/apollo-v2.22.1/apollo-v2.22.1-darwin-x64.tar.gz"
+  static let downloadURLString = "https://install.apollographql.com/legacy-cli/darwin/2.27.4"
   
   /// Downloads the appropriate Apollo CLI in a zip file.
   ///
@@ -64,6 +67,8 @@ struct CLIDownloader {
   ///   - zipFileURL: The URL where downloaded data should be saved.
   ///   - timeout: The maximum time to wait before indicating that the download timed out, in seconds.
   private static func download(to zipFileURL: URL, timeout: Double) throws {
+    try FileManager.default.apollo_createContainingFolderIfNeeded(for: zipFileURL)
+    
     CodegenLogger.log("Downloading zip file with the CLI...")
     let semaphore = DispatchSemaphore(value: 0)
     var errorToThrow: Error? = CLIDownloaderError.downloadTimedOut(after: timeout)
@@ -117,3 +122,5 @@ struct CLIDownloader {
     }
   }
 }
+
+#endif
